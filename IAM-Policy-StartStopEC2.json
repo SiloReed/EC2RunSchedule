@@ -1,0 +1,43 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AllowDescribeForAllResource",
+            "Effect": "Allow",
+            "Action": [
+                "ec2:Describe*"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "AllowEC2ActionsForResourceTag",
+            "Effect": "Allow",
+            "Action": [
+                "ec2:RebootInstances",
+                "ec2:StartInstances",
+                "ec2:StopInstances",
+                "ec2:GetConsoleOutput",
+                "ec2:GetPasswordData",
+                "ec2:MonitorInstances",
+                "ec2:RunInstances"
+            ],
+            "Resource": "*",
+            "Condition": {
+                "StringLike": {
+                    "ec2:ResourceTag/RunSchedule": "*"
+                }
+            }
+        },
+        {
+            "Sid": "AllowCloudWatchReadForAllResource",
+            "Effect": "Allow",
+            "Action": [
+                "ec2:Describe*",
+                "cloudwatch:Describe*",
+                "cloudwatch:GetMetricStatistics",
+                "cloudwatch:ListMetrics"
+            ],
+            "Resource": "*"
+        }
+    ]
+}

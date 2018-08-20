@@ -1,0 +1,96 @@
+{
+    "comments": "This is the list of Amazon EC2 instances that could be checked by the Compare-EC2RunSchedule script.",
+    "name": "EC2 Instances",
+    "regions": [
+        {
+            "name": "us-east-1",
+            "instances": [
+                {
+                    "name": "AWUE1ADDC01",
+                    "RunSchedule": {
+                        "Enabled":  true,
+                        "AutoStart": false,
+                        "RunDays": [
+                            1,
+                            2,
+                            3,
+                            4,
+                            5
+                        ],
+                        "RunHours": 10,
+                        "StartHourUTC": 13,
+                        "Status": {
+                            "TimeStamp": "",
+                            "Message": ""
+                        }
+                    }
+                },
+                {
+                    "name": "AWUE1FILE01",
+                    "RunSchedule": {
+                        "Enabled":  true,
+                        "AutoStart": false,
+                        "RunDays": [
+                            1,
+                            2,
+                            3,
+                            4,
+                            5
+                        ],
+                        "RunHours": 10,
+                        "StartHourUTC": 13,
+                        "Status": {
+                            "TimeStamp": "",
+                            "Message": ""
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "us-east-2",
+            "instances": [
+                {
+                    "name": "AWUE2ADDC01",
+                    "RunSchedule": {
+                        "Enabled":  true,
+                        "AutoStart": false,
+                        "RunDays": [
+                            1,
+                            2,
+                            3,
+                            4,
+                            5
+                        ],
+                        "RunHours": 12,
+                        "StartHourUTC": 12,
+                        "Status": {
+                            "TimeStamp": "",
+                            "Message": ""
+                        }
+                    }
+                },
+                {
+                    "name": "AWUE2FILE01",
+                    "RunSchedule": {
+                        "Enabled":  true,
+                        "AutoStart": true,
+                        "RunDays": [
+                            1,
+                            2,
+                            3,
+                            4,
+                            5
+                        ],
+                        "RunHours": 15,
+                        "StartHourUTC": 11,
+                        "Status": {
+                            "TimeStamp": "",
+                            "Message": ""
+                        }
+                    }
+                }               
+            ]
+        }
+    ]
+}
