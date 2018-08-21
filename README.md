@@ -74,7 +74,7 @@ http://docs.aws.amazon.com/powershell/latest/userguide/specifying-your-aws-crede
 1. Edit the Compare-EC2RunSchedule.json file
     1. Update the FilterPath, if necessary, to the actual path of this Compare-EC2RunSchedule.json file. The FilterPath is used by Compare-EC2RunSchedule.ps1 to locate this .json file and load these values as variables.
     1. Update the SMTPServer value, if necessary. The Compare-EC2RunSchedule.ps1 will send email via this SMTP server when a fatal error occurs.
-    1. Update the To value to the email recipient list that will receive mail sent when a fatal error occurs. Use semi-colons to separate email addresseses. 
+    1. Update the To value to the email recipient list that will receive mail sent when a fatal error occurs. Use semi-colons to separate email addresseses.
 1. In an elevated PowerShell (or cmd.exe) session execute:
     ```powershell
     schtasks.exe /Create /XML C:\EC2RunSchedule\EC2RunSchedule.xml /RU svcRunSchedule /RP * /TN "EC2RunSchedule"
@@ -227,7 +227,7 @@ The Compare-EC2RunSchedule.ps1 script has no command line parameters. Instead, i
     "Variables":  [
         {
             "name": "FilterPath",
-            "value": "C:\\EC2RunSchedule\\EC2RunSchedule.json"
+            "value": "C:\\EC2RunSchedule\\RunScheduleFilter.json"
         },
         {
             "name": "SMTPServer",

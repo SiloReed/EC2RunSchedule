@@ -1,4 +1,9 @@
-Compare-EC2RunSchedule.json
-InstanceList.json
+# Ignore .json config files such as Compare-EC2RunSchedule.json
+*.json
+# EXCEPT don't ignore these two .json files as they are used to create an IAM policy and should be tracked by git
+!IAM-Policy-StartStopEC2.json
+!IAM-Policy-EC2ModifyTags.json
+# Ignore the Logs folder so the local repo may be used "live"
 Logs/
+# Ignore the .vscode folder in-case there are Visual Studio Code preferences (such as debugging) that are unique to each user
 .vscode/
