@@ -170,7 +170,7 @@ function Read-Variables {
 
     # Check that all required vars are set
     foreach ($v in $RequiredVars) {
-        if ((Get-Variable -Name $v -Scope Script -ErrorAction SilentlyContinue) -eq $Null) {
+        if ($Null -eq (Get-Variable -Name $v -Scope Script -ErrorAction SilentlyContinue) ) {
             $m = ("The variable '{0}' is not defined in {1}." -f $v, $jsonFile)
             Send-ErrorMessage -Message $m
             Throw $m          
@@ -222,7 +222,7 @@ function Compare-Instance
             $TagRSValue = ($i.Tag | Where-Object {$_.Key -eq "$scriptTag"}).Value
 
             # Check if the RunSchedule tag does not exists
-            if ($TagRSValue -eq $Null) {
+            if ($Null -eq $TagRSValue) {
                 # The tag doesn't exist
                 Out-Log -Level Info -Message ("The {0} tag is not set for the instance {1}" -f $scriptTag, $InstanceName)
                 Continue
@@ -246,7 +246,7 @@ function Compare-Instance
                 Continue
             }
             # Enabled property must be true and three schedule tags must have values else instance is skipped
-            if ( ($RunSchedule.Enabled) -and ($RunSchedule.StartHourUTC -ne $Null) -and ($RunSchedule.RunHours -ne $Null) -and ($RunSchedule.RunDays -ne $Null)) 
+            if ( ($RunSchedule.Enabled) -and ($Null -ne $RunSchedule.StartHourUTC) -and ($Null -ne $RunSchedule.RunHours) -and ($Null -ne $RunSchedule.RunDays)) 
             {
                 try 
                 {
@@ -493,9 +493,6 @@ Out-Log -Level Info -Message ("{0} script started on {1} using IAM Access Key {2
 # Read the script variables from a json file in the same directory as the script
 Read-Variables
    
-# Create an empty arraylist for monitoring and cleaning up jobs
-[System.Collections.ArrayList] $jobs = @()
-
 if (-not (Test-Path $FilterPath) ) {
         $m = ("FilterPath '{0}' is invalid." -f $FilterPath)
         Send-ErrorMessage -Message $m
