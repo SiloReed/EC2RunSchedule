@@ -140,23 +140,22 @@ The time in UTC that the instance's schedule starts each day in RunDays.
 
 The TimeStamp and Message values in the Status are set by the Set-EC2RunSchedule.ps1 and Compare-EC2RunSchedule.ps1 scripts. Each time Compare-EC2RunSchedule.ps1 changes the state of the machine the Status fields are updated. 
 
-
 ## CmdLet Details
 
 ### Get-EC2RunSchedule
 
-#### Description
+#### Get-EC2RunSchedule Description
 
 Gets the run schedule for a given EC2 instance.
 
-#### Examples
+#### Get-EC2RunSchedule Examples
 
 ```powershell
 Get-EC2RunSchedule -FilterPath $FilterPath
 Get-EC2RunSchedule -Name 'AWUE1*' -Region 'us-east-1'
 ```
 
-#### Output (defaults to list view)
+#### Get-EC2RunSchedul eOutput (defaults to list view)
 
 ```powershell
 Name           : AWUE1ADDC01
@@ -189,31 +188,31 @@ Or that names days of the week can be used with the RunDays parameter:
 Set-EC2RunSchedule -Name 'AWUE1*' -Region 'us-east-1' -Verbose -Enabled -RunHours 13 -RunDays Monday,Wednesday,Friday -StartHourUTC 13 -AutoStart
 ```
 
-#### Output
+#### Set-EC2RunSchedule Output
 
 This cmdlet does not output to StdOut. Use the '-Verbose' parameter to see verbose output. This can be useful as the cmdlet won't return until all background jobs are finished. 
 
-### Remove-EC2RunSchedule.ps1
+### Remove-EC2RunSchedule
 
-#### Remove-EC2RunSchedule.ps1 Description
+#### Remove-EC2RunSchedule Description
 
 Remove the run schedule for a given EC2 instance.
 
-#### Remove-EC2RunSchedule.ps1 Example
+#### Remove-EC2RunSchedule Example
 
 ```powershell
 Remove-EC2RunSchedule -FilterPath $FilterPath -Verbose
 ```
 
-#### Remove-EC2RunSchedule.ps1 Output
+#### Remove-EC2RunSchedule Output
 
 This cmdlet does not output to StdOut. Use the '-Verbose' parameter to see verbose output. This can be useful as the cmdlet won't return until all background jobs are finished.
 
-### Compare-EC2RunSchedule.ps1
+### Compare-EC2RunSchedule.ps1 Script
 
 #### Compare-EC2RunSchedule.ps1 Description
 
-The Compare-EC2RunSchedule.ps1 script is where the magic happens - it actually starts and stops instances based on the contents of each instance's EC2RunSchedule tag. It is intended to be run as a scheduled task on a Windows machine that is "always on". The machine could be on-premises on in the cloud. The scheduled task could be configured to run every 15 minutes. 
+The Compare-EC2RunSchedule.ps1 script is where the magic happens - it actually starts and stops instances based on the contents of each instance's EC2RunSchedule tag. It is intended to be run as a scheduled task on a Windows machine that is "always on". The machine could be on-premises on in the cloud. The scheduled task could be configured to run every 15 minutes.
 
 #### Compare-EC2RunSchedule.ps1 Design
 
