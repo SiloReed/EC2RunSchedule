@@ -1,3 +1,4 @@
 Compare-EC2RunSchedule.json
 InstanceList.json
-/Logs/*
+Logs/
+.vscode/
