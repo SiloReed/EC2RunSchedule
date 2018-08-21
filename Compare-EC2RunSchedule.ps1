@@ -373,7 +373,7 @@ function Set-InstanceState
         The action that will be performed on the instance. 
         Either 'Start' or 'Stop'
     .PARAMETER Instance
-        The name of the AzureRMResource corresponding to the instance 
+        The name tag of the EC2 instance 
     .PARAMETER Tag
         The current RunSchedule tag
     #>

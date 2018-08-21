@@ -147,7 +147,7 @@ The TimeStamp and Message values in the Status are set by the Set-EC2RunSchedule
 
 #### Description
 
-Gets the run schedule for a given Azure RM instance.
+Gets the run schedule for a given EC2 instance.
 
 #### Examples
 
@@ -173,7 +173,7 @@ Status         : 2017-05-19 15:32:07Z Run schedule set by
 
 #### Set-EC2RunSchedule Description
 
-Sets the run schedule for a given Azure RM instance.
+Sets the run schedule for a given EC2 instance.
 
 #### Set-EC2RunSchedule Example
 
@@ -197,7 +197,7 @@ This cmdlet does not output to StdOut. Use the '-Verbose' parameter to see verbo
 
 #### Remove-EC2RunSchedule.ps1 Description
 
-Remove the run schedule for a given Azure RM instance.
+Remove the run schedule for a given EC2 instance.
 
 #### Remove-EC2RunSchedule.ps1 Example
 
@@ -228,7 +228,7 @@ The Compare-EC2RunSchedule.ps1 script has no command line parameters. Instead, i
     "Variables":  [
         {
             "name": "FilterPath",
-            "value": "C:\\users\\silor\\Source\\Repos\\AzurePublic\\scripts\\PowerShell\\EC2RunSchedule\\EC2RunSchedule.json"
+            "value": "C:\\EC2RunSchedule\\EC2RunSchedule.json"
         },
         {
             "name": "SMTPServer",
