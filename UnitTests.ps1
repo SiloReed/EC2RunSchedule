@@ -11,7 +11,7 @@
 $ScriptDir = Split-Path $script:MyInvocation.MyCommand.Path
 Import-Module (Join-Path $ScriptDir "EC2RunSchedule.psd1")
 
-$FilterPath = Join-Path $ScriptDir 'InstanceList.json'
+$FilterPath = Join-Path $ScriptDir 'RunScheduleFilter.json'
 
 $title = "Choose a command to execute"
 $commands = @()

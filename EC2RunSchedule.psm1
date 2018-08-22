@@ -302,7 +302,7 @@ function Get-EC2RunSchedule {
     .EXAMPLE
         Get-EC2RunSchedule -Name "AWUE1*" -Region "us-east-1"
     .EXAMPLE
-        Get-EC2RunSchedule -FilterPath ".\InstanceList.json"
+        Get-EC2RunSchedule -FilterPath ".\RunScheduleFilter.json"
     #>
 
     [CmdletBinding(
@@ -622,7 +622,7 @@ Function Remove-EC2RunSchedule {
     .EXAMPLE
         Remove-EC2RunSchedule -Name "AWPUE1DC01" -Region "us-east-1"
     .EXAMPLE
-        Remove-EC2RunSchedule -FilterPath ".\InstanceList.json"
+        Remove-EC2RunSchedule -FilterPath ".\RunScheduleFilter.json"
     .PARAMETER Name
         The name of the instance.
     .PARAMETER Region
